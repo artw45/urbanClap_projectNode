@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="customerpage.css"> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <!-- <main> -->
+    <div class="container">
+        <div class="img"
+            style="background-image: linear-gradient(150deg, rgba(63, 174, 255, .3)15%, rgba(63, 174, 255, .3)70%, rgba(63, 174, 255, .3)94%), url(https://bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg);height: 350px;background-size: cover;">
+        </div>
+        <div class="card social-prof">
+            <div class="card-body">
+                <div class="wrapper">
+                    <label for="myfile" id="add">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="user-profile" style="cursor: pointer;" id="userImage">
+                    </label>
+                    <input type="file" id="myfile" name="image" accept="image/*" class="d-none" onchange="loadFile(event)">                  
+                    <h3>Jay Parekh</h3>
+                    <p>Customer</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 gedf-main">
+                <div class="card" id="card1">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45"
+                                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0 text-blue">@JayParekh</div>
+                                    <!-- <div class="h7 text-muted">Miracles Lee Cross</div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">Service Provider</h5>
+                        </a>
+                        <h2>Bill paid : 500rs</h2>
+                        <h2>type of Service 1</h2>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Send Mail</a>
+                    </div>
+                </div>
+
+                <div class="card" id="card2">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45"
+                                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0 text-blue">@JaneSmith</div>
+                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">Service Provider</h5>
+                        </a>
+                        <h2>Bill paid : 500rs</h2>
+                        <h2>type of Service 2</h2>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Send Mail</a>
+                    </div>
+                </div>
+
+                <div class="card" id="card3">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45"
+                                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0 text-blue">@JaneSmith</div>
+                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">Service Provider</h5>
+                        </a>
+                        <h2>Bill paid : 500rs</h2>
+                        <h2>type of Service 3</h2>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Chat</a>
+                    </div>
+                </div>
+
+                <div class="card" id="card4">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45"
+                                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0 text-blue">@JaneSmith</div>
+                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">Service Provider</h5>
+                        </a>
+                        <h2>Bill paid : 500rs</h2>
+                        <h2>type of Service 4</h2>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Send Mail</a>
+                    </div>
+                </div>
+
+                <div class="card" id="card5">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width="45"
+                                        src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                </div>
+                                <div class="ml-2">
+                                    <div class="h5 m-0 text-blue">@JaneSmith</div>
+                                    <div class="h7 text-muted">Miracles Lee Cross</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                        <a class="card-link" href="#">
+                            <h5 class="card-title">Service Provider</h5>
+                        </a>
+                        <h2>Bill paid : 500rs</h2>
+                        <h2>type of Service 5</h2>
+
+
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link"><i class="fa fa-comment"></i> Send Mail</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5 text-blue">@JaneSmith</div>
+                        <div class="h7 "><strong>Name :</strong> Jay Parekh</div>
+                        <div class="h7"><strong>UserName :</strong> parekh0408
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h5 text-muted">Email</div>
+                            <div class="h7">jayparekh0408@gamil.com</div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </main> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script src="customerpage.js"></script>
+</body>
+
+</html>

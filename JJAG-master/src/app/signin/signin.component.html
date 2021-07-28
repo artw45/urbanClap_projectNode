@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+  
+  <form action="" class='form-control' method="post">
+    <div class="container">
+      <button id="back" class='btn btn-dark m-3'><i class=' fa fa-backward' style='opacity:0.6'></i></button>
+        <div class="card mb-4 mx-auto col-md-4 mt-5 shadow rounded-lg">
+            <img class="card-img-top p-5 rounded-circle"  style='max-width: 350px;align-self: center;' src="https://thumbs.dreamstime.com/b/home-repair-maintenance-symbol-house-great-your-construction-business-80148265.jpg" alt="Card image cap">
+            <div class="card-body" id='userName'>
+              <h4 class="card-title text-muted" id ="review">
+              LOG IN  
+              </h4>
+              <small>
+              <ul id="serviceProviderDetails" class='list-group list-group-flush'>
+                  <li id='name' class='list-group-item list-group-item-action'>
+                      <span class='text-muted' style='font-size: 1.5em;'>Username</span>
+                      <span>
+                        <input type="text" class='form-control' name="username" id="username" [(ngModel)] = "signInData.userName">
+                      </span>
+                  </li>
+                  <li id='email' class='list-group-item list-group-item-action'>
+                    <span class='text-muted' style='font-size: 1.5em;'>Password</span>
+                      <span>
+                        <input type="password" class='form-control' name="password" id="password" [(ngModel)] = "signInData.password">
+                      </span>
+                  </li>   
+              </ul></small>
+            </div>
+            <div class="card-footer bg-white justify-content-center" style='border:solid white'>
+              <span class='align-self-center m-5'>
+                <button type="submit" class='btn btn-dark  col-8' (click) = "signIn()">Login</button>
+              </span>
+              <hr/>
+              <p class='card-text'>If not registered?</p>
+              <span class='align-self-center m-5'>
+                <button type="submit" class='btn btn-dark  col-8' (click) = "signInpage()">Sign Up</button>
+              </span>
+            </div>
+          </div>
+    </div>
+  </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='response.js'></script>
+    
+</body>
+</html>

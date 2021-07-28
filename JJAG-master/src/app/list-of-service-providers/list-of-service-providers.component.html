@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-5/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<style>
+    .card-deck {
+        flex-flow: none;
+        flex-direction: none;
+        flex-wrap: none;
+
+    }
+
+    .card {
+        min-width: 300px;
+        max-width: 300px;
+    }
+
+    div.jumbotron {
+        padding-left: 5%;
+        background-image: url('dailyWages.jpg');
+        background-repeat: no-repeat;
+        background-position: 30% 9%;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid ">
+            <h1 class='align-self-center pt-1'>Daily Workers..</h1>
+            <h4>Let's do it together...</h4>
+        </div>
+    </header>
+    <button id="back" class='btn btn-dark m-3'><i class=' fa fa-backward' style='opacity:0.6'></i></button>
+    <div class="col-md-3">
+        <section class="panel m-1">
+            <div class="panel-body input-group">
+                <input type="text" placeholder="Service Search" class="form-control" />
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class='fa fa-search'></i></span>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--Service Provider Card List -->
+    <div class="container">
+        <div style="font-size: 30px;">
+            {{serviceProviderData[0].nameOfServices[0]}}
+        </div>
+        <div class="card-deck m-4">
+            <div class="card mb-4" *ngFor = "let serviceProvider of serviceProviderData;let i = index" (click) = "individualServiceprovider(serviceProvider.userName)">
+                <img class="card-img-top p-5"
+                    src="https://thumbs.dreamstime.com/b/home-repair-maintenance-symbol-house-great-your-construction-business-80148265.jpg"
+                    alt="Card image cap">
+                <div class="card-body" id='userName'>
+                    <h6 class="card-title" id="review">
+                        <span class='col-6'>Efficiency(100)</span><span class='col-6' id='efficiency'>{{serviceProvider.reviews}}</span>
+                    </h6>
+                    <small>
+                        <ul id="serviceProviderDetails" class='list-group'>
+                            <li id='name' class='list-group-item list-group-item-action'>{{serviceProvider.name}}</li>
+                            <li id='contactNumber' class='list-group-item list-group-item-action'>{{serviceProvider.mobileNumber1}}</li>
+                            <li id='email' class='list-group-item list-group-item-action'>{{serviceProvider.email1}}</li>
+                        </ul>
+                    </small>
+                    <p class="card-text" *ngIf = "serviceProvider.nameOfServices[0] === 'carpenter'">To order , repair or making furniture</p>
+                    <p class="card-text" *ngIf = "serviceProvider.nameOfServices[0] === 'plumber'">all type plumbing services available</p>
+                    <p class="card-text" *ngIf = "serviceProvider.nameOfServices[0] === 'barber'">contact for your healthy hair</p>
+                    <p class="card-text" *ngIf = "serviceProvider.nameOfServices[0] === 'pestcontrol'">make your home insects free</p>
+
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-dark">
+        <nav class="navbar navbar-dark navbar-expand-sm">
+            <ul class="navbar-nav nav nav-pills">
+                <li class="nav-item"><a class="nav-link mt-3" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link mt-3 " href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Terms &amp; Conditions</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <hr style="background-color:white;" />
+        <div class="m-3 row" style="margin-bottom:0px;">
+            <div class="col-md-6 bg-dark p-5 border-right border-bottom" style="margin-bottom: 0px;">
+                <h1 class="text-white">Daily workers..</h1>
+                <h3 class="text-muted">Let's make it together..!!</h3>
+            </div>
+
+            <div class="navbar navbar-dark col-md-6 border-top border-left">
+                <ul class="navbar-nav nav nav-pills align-self-start">
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-facebook"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-instagram"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-twitter"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-youtube"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='response.js'></script>
+
+</body>
+
+</html>

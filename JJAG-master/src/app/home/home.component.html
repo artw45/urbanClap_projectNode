@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-5/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    .card-deck {
+        flex-flow: none;
+        flex-direction: none;
+        flex-wrap: none;
+
+    }
+
+    .card {
+        min-width: 300px;
+    }
+
+    div.jumbotron {
+        padding-left: 5%;
+        background-image: url('dailyWages.jpg');
+        background-repeat: no-repeat;
+        background-position: 30% 9%;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="jumbotron jumbotron-fluid ">
+            <h1 class='pt-1'>Daily Workers..</h1>
+            <h4>Let's do it together...</h4>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+
+
+            <a class="navbar-brand" href="#"><img
+                    src="https://thumbs.dreamstime.com/b/home-repair-maintenance-symbol-house-great-your-construction-business-80148265.jpg"
+                    alt="WebLogo" class=" rounded-circle" style="height:50px;width:50px;"></a>
+            <span class="navbar-text text-white"><i>Working Rangers</i></span>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end align-self-end" id="collapse_target">
+                <ul class="navbar-nav mx-auto justify-content-around border">
+                    <li class="nav-item dropdown m-1">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="#dropdown_target"
+                            href="#">Services</a>
+                        <span class="caret"></span>
+                        <!--Dropdown including services list-->
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <ul class="list-group list-group-flush">
+                                <a class="dropdown-item list-group-item list-group-item-action">Electrician</a>
+
+                                <a class="dropdown-item list-group-item list-group-item-action">Plumber</a>
+
+                                <a class="dropdown-item list-group-item list-group-item-action">Barber</a>
+
+                                <a class="dropdown-item list-group-item list-group-item-action">Mechanic</a>
+
+                                <a class="dropdown-item list-group-item list-group-item-action">House Painting</a>
+                            </ul>
+                        </div>
+                    </li>
+                    <!--Service Provider SignUp-->
+                    <li class="nav-item m-1" dir="auto">
+                        <a class="nav-link font-weight-bold active" href="#">Register As Service Provider</a>
+                    </li>
+                    <!--SignIn-->
+                    <li class="nav-item m-1" dir="auto" id="signInBtn" (click)='signInPage()'>
+                        <a class="nav-link">Sign In</a>
+                    </li>
+                    <!--SignUp-->
+                    <li class="nav-item m-1 bg-white rounded-lg" dir="auto" id="signUpBtn" (click)="signUpPage()">
+                        <a class="nav-link  text-dark">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <section class="navbar navbar-expand-md m-0">
+        <div>
+            <div id="serviceImages" class="carousel slide m-0 " data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 rounded-lg" src="https://source.unsplash.com/1600x900/?electrician"
+                            alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 rounded-lg" src="https://source.unsplash.com/1600x900/?plumber"
+                            alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 rounded-lg"
+                            src="https://source.unsplash.com/1600x900/?carpenter,painters" alt="Third slide">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="background-color:gray;" />
+
+    <!--Special Deals & Offers-->
+    <section id="serviceOfferSection">
+        <div class="mx-auto col-md-6 font-weight-bold text-info" style="font-size:2rem;"><span
+                class="col-md-6 col-sm-4">Special Deals &amp; Offers</span> <img class="col-md-4 col-sm-4"
+                src="https://i.pinimg.com/originals/74/a0/fb/74a0fb466ad759185738c60b7ae1a1f3.gif"
+                style="height:7rem;width:8rem;"></div><br>
+
+        <div class="card-deck m-4">
+
+            <div class="card mb-4" (click)="moveToNextPage('carpenter')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?carpenter" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Carpenter</h5>
+                    <p class="card-text">To order , repair or making furniture</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('painter')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?painter" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Painter</h5>
+                    <p class="card-text">Wall and furniture painting service..</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('electritian')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?electrician" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Electrician </h5>
+                    <p class="card-text">Electric appliance repair service</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Regular Services Available Short Overview Cards-->
+    <section class="" id="services">
+        <div class="card-deck m-5">
+            <div class="card mb-4" (click)="moveToNextPage('barber')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?barber" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Barber</h5>
+                    <p class="card-text">Care for your healthy hair</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('housecleaning')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?cleaning" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">House Cleaning</h5>
+                    <p class="card-text">Make your home sweet home</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('plumber')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?plumber" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Plumber</h5>
+                    <p class="card-text">Plumbing related services</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('pestcontrol')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?PestControl"
+                    alt="pestCOntrolImage">
+                <div class="card-body">
+                    <h5 class="card-title">Pest Controller</h5>
+                    <p class="card-text"> Pest Control HOme Service ...</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        50 $/- Service fee
+                    </small>
+                </div>
+            </div>
+
+            <div class="card mb-4" (click)="moveToNextPage('salon')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?salon" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Salon At Home</h5>
+                    <p class="card-text">All salon services available</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+            <div class="card mb-4" (click)="moveToNextPage('botique')">
+                <img class="card-img-top" src="https://source.unsplash.com/1600x900/?botique" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Botique</h5>
+                    <p class="card-text">different varities available</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">60 $/- Service fee</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer Section-->
+    <footer class="container-fluid bg-dark" style="border: solid yellowgreen;">
+        <nav class="navbar navbar-dark navbar-expand-sm">
+            <ul class="navbar-nav nav nav-pills">
+                <li class="nav-item" id="aboutUs"><a class="nav-link mt-3" href="aboutUs.html">About Us</a>
+                </li>
+                <li class="nav-item"><a class="nav-link mt-3 " href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Terms &amp; Conditions</a></li>
+                <li class="nav-item"><a class="nav-link mt-3" href="#">Privacy Policy</a></li>
+            </ul>
+        </nav>
+        <hr style="background-color:white;" />
+        <div class="m-3 row" style="margin-bottom:0px;">
+            <div class="col-md-6 bg-dark p-5 border-right border-bottom" style="margin-bottom: 0px;">
+                <h1 class="text-white">Daily workers..</h1>
+                <h3 class="text-muted">Let's make it together..!!</h3>
+            </div>
+
+            <div class="navbar navbar-dark col-md-6 border-top border-left">
+                <ul class="navbar-nav nav nav-pills align-self-start">
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-facebook"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-instagram"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-twitter"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fab fa-youtube"
+                                style="font-size:2rem;"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='response.js'></script>
+
+</body>
+
+</html>

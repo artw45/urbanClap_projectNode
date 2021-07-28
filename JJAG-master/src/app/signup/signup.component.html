@@ -1,0 +1,200 @@
+<div style="font-size: 80px; background-color: antiquewhite;">
+    Sign Up
+</div>
+<div class="container mt-2">
+    <form action="">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
+                </div>
+                <input type="text" class="form-control" name="Name" placeholder="Name" [(ngModel)]="signUpData.name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
+                </div>
+                <input type="text" class="form-control" name="userName" placeholder="Username"
+                    [(ngModel)]="signUpData.userName">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-address-book"></i></span>
+                </div>
+                <input type="text" name="address" class="form-control" placeholder="Address"
+                    [(ngModel)]="signUpData.address">
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-size: 30px;">
+                Your Reach
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-users"></i></span>
+                </div>
+                <input type="text" class="form-control" name="reach" placeholder="Reach" [(ngModel)]="signUpData.reach">
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-size: 30px;">
+                Your Efficiency
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-handshake"></i></span>
+                </div>
+                <input type="text" class="form-control" name="reviews" placeholder="Reviews"
+                    [(ngModel)]="signUpData.reviews">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-phone"></i></span>
+                </div>
+                <input type="text" class="form-control" name="mobileNumber1" placeholder="Mobilenumber1"
+                    [(ngModel)]="signUpData.mobileNumber1">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-phone"></i></span>
+                </div>
+                <input type="text" class="form-control" name="mobileNumber2" placeholder="Mobilenumber2"
+                    [(ngModel)]="signUpData.mobileNumber2">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-envelope"></i></span>
+                </div>
+                <input type="text" class="form-control" name="email1" placeholder="Email1"
+                    [(ngModel)]="signUpData.email1">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-envelope"></i></span>
+                </div>
+                <input type="text" class="form-control" name="email2" placeholder="Email2"
+                    [(ngModel)]="signUpData.email2">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-instagram"></i></span>
+                </div>
+                <input type="text" class="form-control" name="instagram" placeholder="Instagram Username"
+                    [(ngModel)]="signUpData.instagram">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-facebook"></i></span>
+                </div>
+                <input type="text" class="form-control" name="facebook" placeholder="Facebook Account Name"
+                    [(ngModel)]="signUpData.facebook">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-linkedin"></i></span>
+                </div>
+                <input type="text" class="form-control" name="linkedIn" placeholder="LinkedIn Account Name"
+                    [(ngModel)]="signUpData.linkedIn">
+            </div>
+        </div>
+        <div class="form-group">
+            <div style="font-size: 30px;">
+                select number of services you provide
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class = "fas fa-server"></i></span>
+                </div>
+                <select name="numbers" id="" class="form-control" (change)="servicesNames($event)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                Enter Name Of All Services
+            </div>
+            <div class="row">
+                <div class="col-lg-2 m-1 col-md-3 col-sm-12"
+                    *ngFor="let service of signUpData.nameOfServices; let i = index; trackBy:trackByFn">
+                    <input type="text" class="form-control" placeholder="service"
+                        [(ngModel)]="signUpData.nameOfServices[i]" name="service{{i}}">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div *ngFor="let image of signUpData.images; let i = index">
+                upload images for {{signUpData.nameOfServices[i]}}
+                <input type="file" accept="mp3/*" multiple class="m-2" (change)="onFileChange($event)">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div style="font-size: 30px;">
+                select number of top clients you want to show
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                </div>
+                <select name="numbers" id="" class="form-control" (change)="clientsNames($event)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                Put Name Of Your Top Clients in givren below Field.
+            </div>
+            <div class="row">
+                <div class="col-lg-2 m-1 col-md-3 col-sm-12"
+                    *ngFor="let client of signUpData.clients; let i = index; trackBy:trackByFn">
+                    <input type="text" class="form-control" placeholder="Client Name"
+                        [(ngModel)]="signUpData.clients[i]" name="client{{i}}" autofocus>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id = "password"  name = "password" class = "form-control" [(ngModel)] = "signUpData.password">
+        </div>
+        <div>
+            <button class="btn btn-primary" style="height: 100; width: 100%;" 
+            (click) = "onSubmit()" 
+            routerLink = "/serviceProviders">Sign Up</button>
+        </div>
+    </form>
+</div>
